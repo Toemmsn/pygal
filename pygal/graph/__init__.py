@@ -42,5 +42,6 @@ CHARTS_NAMES = [
     'Histogram',
     'Box',
     'FrenchMap',
-    'Treemap'
+    'Treemap',
+    'PieDot'
 ]

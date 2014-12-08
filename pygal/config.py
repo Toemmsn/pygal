@@ -414,6 +414,10 @@ class Config(CommonConfig):
         False, bool, "Misc",
         "Don't prefix css")
 
+    # PieDot chart config #
+    base_value_index = Key(
+        0, int, "PieDot", "which value of a piedot is responsible for the size of the dot")
+
 
 class SerieConfig(CommonConfig):
     """Class holding serie config values"""
