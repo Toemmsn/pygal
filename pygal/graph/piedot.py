@@ -42,17 +42,15 @@ class PieDot(Graph):
             radius = r_max * values[self.base_value_index]
             value = self._format(values[self.base_value_index])
             metadata = serie.metadata.get(i)
-            dots = decorate(
-                self.svg,
-                self.svg.node(serie_node['plot'], class_="slices"),
-                metadata)
+            dots = decorate(self.svg,
+                            self.svg.node(serie_node['plot'], class_="slices"),
+                            metadata)
 
-            # slices = self.svg.node(serie_node['plot'], class_="slices")
             current_angle = 0
             total = sum(values)
             slice_num = 0
             for slice_value in values:
-                slice_color = (serie.index + slice_num) % len(self.style['colors'])
+                slice_color = slice_num % len(self.style['colors'])
                 slice_num += 1
                 perc = slice_value / total
                 angle = 2 * pi * perc
